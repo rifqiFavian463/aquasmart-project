@@ -77,6 +77,7 @@ const useCardStore = create((set) => ({
 const useUserStore = create((set) => ({
   userList: rawUserList,
   addUser: (user) => set((state) => ({ userList: [...state.userList, user] })),
+  updateUser: (user) => set((state) => ({ userList: state.userList.map((item) => (item.id === user.id ? user : item)) })),
   deleteUser: (id) => set((state) => ({ userList: state.userList.filter((item) => item.id !== id) })),
 }));
 

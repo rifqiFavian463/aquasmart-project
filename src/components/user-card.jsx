@@ -29,7 +29,7 @@ function UserCard({ id, name, role, registration, address }) {
         <button onClick={toggleActionMenu}>
           <img src="icons/option.png" alt="Option" className="w-8 self-center" />
         </button>
-        <div className="-bottom-0 -right-0 relative">{showActionMenu && <ActionButton id={id} deleteState={useUserStore.getState().deleteUser} />}</div>
+        <div className="-bottom-0 -right-0 relative">{showActionMenu && <ActionButton url={`/pengguna/${id}`} id={id} deleteState={useUserStore.getState().deleteUser} />}</div>
       </div>
     </div>
   );
