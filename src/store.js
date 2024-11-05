@@ -49,12 +49,16 @@ const rawUserList = [
     name: "Budiono Siregar",
     role: "Petani",
     registration: "20 Oktober 2000",
+    email: "RlSsN@example.com",
+    password: "123456",
     address: "Indojaya Bioflok",
   },
   {
     id: 1,
     name: "Budiono Siregar",
     role: "Petani",
+    password: "123456",
+    email: "RlSsN@example.com",
     registration: "20 Oktober 2000",
     address: "Indojaya Bioflok",
   },
@@ -62,10 +66,24 @@ const rawUserList = [
     id: 2,
     name: "Budiono Siregar",
     role: "Petani",
+    email: "RlSsN@example.com",
+    password: "123456",
     registration: "20 Oktober 2000",
     address: "Indojaya Bioflok",
   },
 ];
+
+const userProfile = {
+  name: "Budi Wahyudi",
+  address: "Tunas Regency",
+  email: "budy@gmail.com",
+  password: "budy@gmail.com",
+};
+
+const useProfileStore = create((set) => ({
+  profile: userProfile,
+  editProfile: (card) => set(() => ({ profile: card })),
+}));
 
 const useCardStore = create((set) => ({
   cardList: rawCardList,
@@ -81,4 +99,4 @@ const useUserStore = create((set) => ({
   deleteUser: (id) => set((state) => ({ userList: state.userList.filter((item) => item.id !== id) })),
 }));
 
-export { useCardStore, useUserStore };
+export { useCardStore, useUserStore, useProfileStore };

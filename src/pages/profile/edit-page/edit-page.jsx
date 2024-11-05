@@ -1,31 +1,27 @@
-import React, { useState } from "react";
-import { useUserStore } from "../../../store";
+import React from "react";
+import { useProfileStore } from "../../../store";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 function EditPage() {
-  const { id } = useParams();
-  const user = useUserStore((state) => state.userList).filter((item) => item.id === parseInt(id))[0];
-  const editUser = useUserStore((state) => state.updateUser);
-
+  const profile = useProfileStore((state) => state.profile);
+  const editProfile = useProfileStore((state) => state.editProfile);
   const navigate = useNavigate();
 
-  const [name, setName] = useState(user.name || "");
-  const [address, setAddress] = useState(user.address || "");
-  const [email, setEmail] = useState(user.email || "");
-  const [role, setRole] = useState(user.role || "Petani");
-  const [password, setPassword] = useState(user.password || "");
+  const [name, setName] = useState(profile.name || "");
+  const [address, setAddress] = useState(profile.address || "");
+  const [email, setEmail] = useState(profile.email || "");
+  const [password, setPassword] = useState(profile.password || "");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let formData = {
-      id: user.id,
       name,
       address,
-      role,
+      email,
       password,
     };
-    editUser(formData);
+    editProfile(formData);
     navigate("/pengguna");
   };
   return (

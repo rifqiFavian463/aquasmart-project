@@ -8,6 +8,8 @@ import LaporanAddingPage from "./pages/laporan/adding-page/adding-page";
 import PenggunaPage from "./pages/pengguna/pengguna-page";
 import PenggunaAddingPage from "./pages/pengguna/addding-page/adding-page";
 import PenggunaEditPage from "./pages/pengguna/edit-page/edit-page";
+import ProfilePage from "./pages/profile/profile";
+import ProfileEditPage from "./pages/profile/edit-page/edit-page";
 
 import { Navbar } from "./components/navbar";
 import { Hero } from "./components/hero";
@@ -26,6 +28,8 @@ function App() {
         <Route path="/pengguna" element={<PenggunaPage />} />
         <Route path="/pengguna/adding-page" element={<PenggunaAddingPage />} />
         <Route path="/pengguna/:id" element={<PenggunaEditPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile/edit" element={<ProfileEditPage />} />
       </Routes>
       <Footer />
     </Router>

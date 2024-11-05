@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ActionButton } from "./actionButton";
 import { useUserStore } from "../store";
 
-function UserCard({ id, name, role, registration, address }) {
+function UserCard({ id, name, role, registration, address, password, email }) {
   const [showActionMenu, setShowActionMenu] = useState(false);
 
   const toggleActionMenu = () => {
@@ -23,6 +23,12 @@ function UserCard({ id, name, role, registration, address }) {
         </span>
         <span className="user-card__address">
           Lokasi : <b>{address}</b>
+        </span>
+        <span className="user-card__email">
+          Email : <b>{email}</b>
+        </span>
+        <span className="user-card__password">
+          Password : <b>{password}</b>
         </span>
       </div>
       <div className="flex">
